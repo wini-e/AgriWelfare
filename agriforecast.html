@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriForecast</title>
+    <link rel="stylesheet" href="agriforecaststyle.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a class="main-logo"><img src="logooo.svg" alt="AgriWelfare Logo"></a>
+        <a class="logo"><img src="name.png" alt="AgriWelfare Name"></a>
+        <nav class="navigation">
+            <a href="main.html">Home</a>
+            <a href="media.html">Media</a>
+            <a href="agriforecast.html">Weather</a>
+            <a href="schemes.html">Schemes</a>
+        </nav>
+    </header>
+
+    <div class="card">
+        <div class="search">
+            <input type="text" id="city-input" placeholder="Enter city name" spellcheck="false">
+            <button id="search-btn"><img src="images/search.png" alt="Search"></button>
+        </div>
+        <div class="weather">
+            <img id="weather-icon" src="images/rain.png" class="weather-icon" alt="Weather Icon">
+            <h1 id="temp" class="temp">22°C</h1>
+            <h2 id="city" class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="Humidity Icon">
+                    <div>
+                        <p id="humidity" class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="Wind Icon">
+                    <div>
+                        <p id="wind-speed" class="windy">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = "fe08f1d28d65bfc8d0324d789baacff6"; // Replace with your own API key
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&appid=" + apiKey;
+
+        // Function to fetch weather data based on city name
+        async function checkWeather(city) {
+            const response = await fetch(apiUrl + `&q=${city}`);
+            const data = await response.json();
+            
+            if (data.cod === "404") {
+                alert("City not found! Please try again.");
+                return;
+            }
+
+            // Update the UI with the fetched weather data
+            document.getElementById('temp').textContent = `${data.main.temp}°C`;
+            document.getElementById('city').textContent = data.name;
+            document.getElementById('humidity').textContent = `${data.main.humidity}%`;
+            document.getElementById('wind-speed').textContent = `${data.wind.speed} km/h`;
+            document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        }
+
+        // Event listener for the search button
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const city = document.getElementById('city-input').value;
+            if (city) {
+                checkWeather(city);
+            } else {
+                alert("Please enter a city name.");
+            }
+        });
+
+        // Event listener for the Enter key on the input field
+        document.getElementById('city-input').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const city = document.getElementById('city-input').value;
+                if (city) {
+                    checkWeather(city);
+                } else {
+                    alert("Please enter a city name.");
+                }
+            }
+        });
+
+        // Optional: Fetch weather for a default city when the page loads
+        checkWeather("delhi");
+
+        const data = null;
+
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open('GET', 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Delhi');
+        xhr.setRequestHeader('x-rapidapi-key', 'a032206df7mshecd1e74d9e6c4cep1457f5jsne43012fdaa35');
+        xhr.setRequestHeader('x-rapidapi-host', 'weather-by-api-ninjas.p.rapidapi.com');
+
+        xhr.send(data);
+
+        // Add active class to the current page link
+        window.addEventListener('DOMContentLoaded', () => {
+            const path = window.location.pathname; // Get current path
+            const links = document.querySelectorAll('.navigation a'); // Select all nav links
+
+            links.forEach(link => {
+                if (path.includes(link.getAttribute('href'))) {
+                    link.classList.add('active'); // Add 'active' class to the link that matches the current page
+                }
+            });
+        });
+    </script>
+</body>
+</html>
