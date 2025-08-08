@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Suggestion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- /*<h2>Crop Suggestion Based on Season & State</h2 -->
+    <label for="state">Select State:</label>
+    <select id="state">
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Punjab">Punjab</option>
+        <option value="UP">Uttar Pradesh</option>
+        <option value="MP">Madhya Pradesh</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+    </select>
+    
+    <label for="season">Select Season:</label>
+    <select id="season">
+        <option value="Winter">Winter</option>
+        <option value="Rainy">Rainy</option>
+        <option value="Summer">Summer</option>
+    </select>
+    
+    <button onclick="getCropSuggestion()">Get Crop Suggestion</button>
+    
+    <div id="result"></div>
+    
+    <script>
+        function getCropSuggestion() {
+            let state = document.getElementById("state").value;
+            let season = document.getElementById("season").value;
+            let cropSuggestions = {
+                "Maharashtra": {
+                    "Winter": "Gram (Chickpea), Wheat, Mustard",
+                    "Rainy": "Cotton, Soybean, Paddy",
+                    "Summer": "Watermelon, Muskmelon, Cucumber"
+                },
+                "Punjab": {
+                    "Winter": "Wheat, Barley, Mustard",
+                    "Rainy": "Paddy, Maize, Cotton",
+                    "Summer": "Bitter Gourd, Bottle Gourd"
+                },
+                "UP": {
+                    "Winter": "Wheat, Gram, Mustard",
+                    "Rainy": "Paddy, Maize, Tur",
+                    "Summer": "Pumpkin, Watermelon, Cucumber"
+                },
+                "MP": {
+                    "Winter": "Wheat, Gram, Barley",
+                    "Rainy": "Soybean, Maize, Tur",
+                    "Summer": "Muskmelon, Watermelon"
+                },
+                "Tamil Nadu": {
+                    "Winter": "Sunflower, Groundnut",
+                    "Rainy": "Paddy, Maize, Cotton",
+                    "Summer": "Cucumber, Watermelon"
+                }
+            };
+            
+            let crops = cropSuggestions[state][season] || "No data available";
+            document.getElementById("result").innerText = "Suggested Crops: " + crops;
+        }
+    </script>
+</body>
+</html>

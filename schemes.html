@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Schemes</title>
+    <link rel="stylesheet" href="schemes.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a class="main-logo"><img src="logo.png" alt="AgriWelfare Logo"></a>
+        <a class="logo"><img src="name.png" alt="AgriWelfare Name"></a>
+        <nav class="navigation">
+            <a href="main.html">Home</a>
+            <a href="media.html">Media</a>
+            <a href="agriforecast.html">Weather</a>
+            <a href="schemes.html">Schemes</a>
+        </nav>
+    </header>
+    <div class="header">
+       <h1>Government Schemes Finder</h1>
+    </div>
+
+    <section>
+        <h2>Select Scheme Domain</h2>
+        <div class="form-container">
+            <input type="text" id="searchInput" placeholder="Search for schemes..." onkeyup="filterSchemes()">
+            <select id="schemeDomain" onchange="filterSchemes()">
+                <option value="all">All Domains</option>
+                <option value="education">Education</option>
+                <option value="health">Health</option>
+                <option value="agriculture">Agriculture</option>
+            </select>
+        </div>
+        
+        <div class="scheme-list-container">
+            <ul id="schemeList" class="scheme-list">
+                <!-- Schemes will be displayed here -->
+            </ul>
+        </div>
+    </section>
+
+    
+
+    <script src="schemes.js"></script>
+</body>
+</html>

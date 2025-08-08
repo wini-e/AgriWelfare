@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media | AgriWelfare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+header {
+    background: #024D48;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+}
+
+header .main-logo img {
+    height: 50px;
+    margin-right: 2px;
+}
+header .logo img{
+    height: 50px;
+    margin-right: 2px;
+}
+ 
+
+.navigation {
+    margin-left: auto;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.navigation a.active {
+    background: #ffffff;
+    color: #2E8B57;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+        /* Media Section */
+        .media {
+            text-align: center;
+            padding: 100px 50px 50px; /* Adjusted padding to account for fixed header */
+            background: white;
+        }
+
+        .media h1 {
+            font-size: 28px;
+            color: #2E8B57;
+            margin-bottom: 10px;
+        }
+
+        .media p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Video Styling */
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Header Section -->
+    <header>
+        <a class="main-logo"><img src="logo.png" alt="AgriWelfare Logo"></a>
+        <a class="logo"><img src="name.png" alt="AgriWelfare Name"></a>
+        <nav class="navigation">
+            <a href="main.html">Home</a>
+            <a href="media.html">Media</a>
+            <a href="agriforecast.html">Weather</a>
+            <a href="schemes.html">Schemes</a>
+        </nav>
+    </header>
+
+    <!-- Media Section -->
+    <section class="media">
+        <h1>AgriWelfare Media</h1>
+        <p>Watch this informative video on modern agricultural techniques.</p>
+        <!-- YouTube Video -->
+        <div class="video-container">
+            <iframe width="560" height="315" src="Bharat Ek Khoj ∩╜£ Episode-1 ∩╜£ Bharat Mata Ki Jai.mp4" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const path = window.location.pathname; // Get current path
+            const links = document.querySelectorAll('.navigation a'); // Select all nav links
+
+            links.forEach(link => {
+                if (path.includes(link.getAttribute('href'))) {
+                    link.classList.add('active'); // Add 'active' class to the link that matches the current page
+                }
+            });
+        });
+    </script>
+</body>
+</html>

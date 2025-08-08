@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background: #0d5339;
+min-height: 100vh;
+overflow-x: hidden;
+}
+
+header {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+padding: 30px 60px;
+display: flex;
+justify-content:flex-start;
+align-items:flex-start;
+z-index: 100;
+}
+
+.logo {
+font-size: 2em;
+color: #359381;
+pointer-events: none;
+margin-right: 270px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color:   #359381;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 30px;
+    font-weight: 600;
+    scroll-margin-top: 5px;
+    position:relative;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #359381;
+    color: #fff;   
+}
+
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#text {
+    position:absolute;
+    font-size: 5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.2);
+}
+
+.parallax img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events:fill;
+}
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0px;
+  }
+  
+  .servcies-section-wrapper {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  
+  .services-box {
+    background-color: #4b8748;
+    color: white;
+    width: 250px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .services-box:hover {
+    background-color: #93c2c7;
+  }
+  
+  .services-box h3,
+  .services-box p {
+    margin: 0px;
+    text-align: center;
+  }
+  
+  .services-box i {
+    background-color: white;
+    color: #359381;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+  .slider{
+    width: 1800px;
+    max-width: 90vw;
+    height: 350px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+.list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: max-content;
+    transition: 1s;
+}
+.list img{
+    width: 1300px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 505;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.dots{
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+}
+.dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 20px;
+}
+.dots li.active {
+    width: 30px;
+}
+@media screen and ( max-width: 768px) { 
+    .slider {
+        height: 400px;
+    }
+    
+}
+  article {
+    padding: 1rem;
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #4b8748;
+    text-align: center;
+  }
+  h2 {
+    text-transform: capitalize;
+  }
+  .start p {
+    text-align:left;
+    hyphens: auto;
+    color: #fff;
+  }
+  
+  /* different style for 1st paragraph*/
+  .start p:first-of-type {
+    font-size: 1.1rem;
+  }
+  /* Drop Cap */
+ .start  p:first-of-type:first-letter {
+    font-size: 4.2rem;
+    font-weight: bold;
+    float: left;
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding-right: 0.15rem;
+    color: white;
+    background-color:#359381;
+    padding: 1.2rem 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .start p:first-of-type:first-line {
+    font-weight: bold;
+  }
+  
